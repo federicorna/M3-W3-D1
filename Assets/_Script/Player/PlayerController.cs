@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
     [SerializeField] private Rigidbody2D _rb;
@@ -18,12 +18,13 @@ public class PlayerControler : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
-        _dir = new Vector2 (h, v).normalized;
+        _dir = new Vector2(h, v).normalized;
     }
 
     private void FixedUpdate()
     {
-        _rb.MovePosition (_rb.position + _dir * (_speed * Time.fixedDeltaTime));
+        _rb.MovePosition(_rb.position + _dir * (_speed * Time.fixedDeltaTime));
+        
     }
 
 }
